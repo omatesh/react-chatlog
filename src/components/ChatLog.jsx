@@ -3,24 +3,20 @@ import './ChatLog.css';
 import PropTypes from 'prop-types';
 
 const ChatLog = (props) => {
-  let messageComponents = [];
-
-  if (props.entries) {
-    messageComponents = props.entries.map((message) => {
-      return (
-        <li key={message.id}>
-          <ChatEntry
-            id={message.id}
-            sender={message.sender}
-            body={message.body}
-            timeStamp={message.timeStamp}
-            liked={message.liked}
-            likeToggleFunc={props.likeToggleFunc}
-          />
-        </li>
-      );
-    });
-  }
+  const messageComponents = props.entries.map((message) => {
+    return (
+      <li key={message.id}>
+        <ChatEntry
+          id={message.id}
+          sender={message.sender}
+          body={message.body}
+          timeStamp={message.timeStamp}
+          liked={message.liked}
+          likeToggleFunc={props.likeToggleFunc}
+        />
+      </li>
+    );
+  });
 
   return (
     <section className="chat-log">

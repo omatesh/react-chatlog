@@ -26,11 +26,11 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Chat between Vladimir and Estragon</h1>
+        <div>
+          {totalLikes} ❤️s
+        </div>
       </header>
       <main>
-        <section className="like-summary-box">
-          {totalLikes} ❤️s
-        </section>
         <ChatLog
           entries={messageList}
           likeToggleFunc={likeToggleFunc}
