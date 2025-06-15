@@ -2,3 +2,6 @@
   margin: auto;
   max-width: 50rem;
 }
+.chat-log ul {
+  list-style: none;
+}
