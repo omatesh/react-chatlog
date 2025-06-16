@@ -4,11 +4,14 @@ import PropTypes from 'prop-types';
 
 const ChatLog = (props) => {
   const messageComponents = props.entries.map((message) => {
+    const senderType = message.sender === props.localSender ? 'local' : 'remote';
+
     return (
       <li key={message.id}>
         <ChatEntry
           id={message.id}
           sender={message.sender}
+          senderType={senderType}
           body={message.body}
           timeStamp={message.timeStamp}
           liked={message.liked}
@@ -36,6 +39,8 @@ ChatLog.propTypes = {
     })
   ).isRequired,
   likeToggleFunc: PropTypes.func.isRequired,
+  localSender: PropTypes.string.isRequired, 
+  
 };
 
 export default ChatLog;

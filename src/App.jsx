@@ -34,6 +34,7 @@ const App = () => {
         <ChatLog
           entries={messageList}
           likeToggleFunc={likeToggleFunc}
+          localSender="Vladimir"
         />
       </main>
     </div>
